@@ -14,11 +14,14 @@ import static org.junit.jupiter.api.BeforeEach;
 @SpringBootTest
 public class VoitureTest {
 
+    private Voiture voitureTest;
+    private Voiture voitureVide;
+
     @BeforeEach
     public void init()
     {
-        private final Voiture voitureTest = new Voiture("test",1);
-        private final Voiture voitureVide = new Voiture();
+        this.voitureTest = new Voiture("test",1);
+        this.voitureVide = new Voiture();
     }
 
 
