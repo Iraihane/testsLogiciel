@@ -12,8 +12,13 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 @SpringBootTest
 public class VoitureTest {
 
-    private final Voiture voitureTest = new Voiture("test",1);
-    private final Voiture voitureVide = new Voiture();
+    @BeforeEach
+    public void init()
+    {
+        private final Voiture voitureTest = new Voiture("test",1);
+        private final Voiture voitureVide = new Voiture();
+    }
+
 
     @Test
     void creerVoiture()
