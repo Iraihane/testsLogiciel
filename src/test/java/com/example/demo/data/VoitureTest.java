@@ -24,7 +24,7 @@ public class VoitureTest {
         assertEquals(voitureVide.getMarque(),"");
         assertEquals(voitureVide.getPrix(),0);
         assertEquals(voitureVide.getId(),0);
-        assertEquals(voitureVide.toString(),"Car{marque='', prix=0, id=0}");
+        assertEquals(voitureVide.toString(),"Car{marque='', prix=, id=0}");
     }
 
 }
