@@ -7,29 +7,39 @@ import org.springframework.util.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
+import org.junit.jupiter.api.BeforeEach;
+
 
 
 @SpringBootTest
 public class VoitureTest {
 
-    private final Voiture voitureTest = new Voiture("test",1);
-    private final Voiture voitureVide = new Voiture();
+    private Voiture voitureTest;
+    private Voiture voitureVide;
+
+    @BeforeEach
+    public void init()
+    {
+        this.voitureTest = new Voiture("test",1);
+        this.voitureVide = new Voiture();
+    }
+
 
     @Test
     void creerVoiture()
     {
-        assertEquals(voitureTest.getMarque(),"test");
-        assertEquals(voitureTest.getPrix(),1);
-        assertNotEquals(voitureTest.getId(),1);
-        assertEquals(voitureTest.toString(),"Car{marque='test', prix=1, id=0}");
+        assertEquals(this.voitureTest.getMarque(),"test");
+        assertEquals(this.voitureTest.getPrix(),1);
+        assertNotEquals(this.voitureTest.getId(),1);
+        assertEquals(this.voitureTest.toString(),"Car{marque='test', prix=1, id=0}");
     }
 
     @Test
     void creerVoitureVide()
     {
-        assertNull(voitureVide.getMarque());
-        assertEquals(voitureVide.getPrix(),0);
-        assertEquals(voitureVide.getId(),0);
+        assertNull(this.voitureVide.getMarque());
+        assertEquals(this.voitureVide.getPrix(),0);
+        assertEquals(this.voitureVide.getId(),0);
     }
 
 }
