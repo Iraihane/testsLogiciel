@@ -19,21 +19,12 @@ public class VoitureTest {
         assertEquals(voitureTest.getMarque(),"test");
         assertEquals(voitureTest.getPrix(),1);
         assertNotEquals(voitureTest.getId(),1);
-        assertEquals(voitureTest.toString(),"Car{
-                marque='test'  
-                , prix=1
-                , id=0 
-                }");
+        assertEquals(voitureTest.toString(),"Car{marque='test', prix=1, id=0}");
 
-        assertEquals(voitureTest.getMarque(),"");
-        assertEquals(voitureTest.getPrix(),0);
-        assertEquals(voitureTest.getId(),0);
-        assertEquals(voitureTest.toString(),"Car{
-            marque=''  
-            , prix=0
-            , id=0 
-            }");
-
+        assertEquals(voitureVide.getMarque(),"");
+        assertEquals(voitureVide.getPrix(),0);
+        assertEquals(voitureVide.getId(),0);
+        assertEquals(voitureVide.toString(),"Car{marque='', prix=0, id=0}");
     }
 
 }
