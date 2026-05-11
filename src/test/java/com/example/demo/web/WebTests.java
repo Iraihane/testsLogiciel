@@ -54,7 +54,7 @@ class WebTests {
     {
         Voiture v = new Voiture("BMW", 20000);
         statistiqueController.creerVoiture(v);
-        verify(statistiqueImpl,times(1)).ajouter(v)
+        verify(statistiqueImpl,times(1)).ajouter(v);
     }
 
     
