@@ -27,7 +27,7 @@ public class StatistiqueTests {
     @Test
     void ajouterVoiture()
     {
-        Voiture uneVoiture = Mockito.mock(Voiture.class);
+        Voiture uneVoiture = mock(Voiture.class);
         
         statistiqueImpl.ajouter(uneVoiture);
         assertDoesNotThrow(() -> statistiqueImpl.prixMoyen());
@@ -36,8 +36,8 @@ public class StatistiqueTests {
     @Test
     void prixMoyenCalcul()
     {
-        Voiture v1 = Mockito.mock(Voiture.class);
-        Voiture v2 = Mockito.mock(Voiture.class);
+        Voiture v1 = mock(Voiture.class);
+        Voiture v2 = mock(Voiture.class);
 
         when(v1.getPrix()).thenReturn(1000);
         when(v2.getPrix()).thenReturn(2000);
