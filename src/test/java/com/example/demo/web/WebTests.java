@@ -90,4 +90,6 @@ class WebTests {
         mockMvc.perform(post("/voiture").contentType(MediaType.APPLICATION_JSON).content(objectMapper.writeValueAsString(v))).andExpect(status().isOk());
         verify(statistiqueImpl,times(1)).ajouter(any(Voiture.class));
     }
+        //test
+
 }
