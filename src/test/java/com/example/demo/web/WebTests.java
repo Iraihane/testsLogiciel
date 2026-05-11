@@ -84,7 +84,7 @@ class WebTests {
     }
 
     @Test
-    void testCreerVoiture()
+    void testCreerVoiture() throws Exception
     {
         Voiture v = new Voiture("BMW", 20000);
         mockMvc.perform(post("/voiture").content(objectMapper.writeValueAsString(v))).andExpect(status().isOk());
