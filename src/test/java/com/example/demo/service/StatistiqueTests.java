@@ -15,34 +15,31 @@ import org.junit.jupiter.api.BeforeEach;
 public class StatistiqueTests {
 
     StatistiqueImpl statistiqueImpl;
-    @MockBean
     Voiture voiture;
 
     @BeforeEach
     void setUp()
     {
         statistiqueImpl = new StatistiqueImpl();
+        voiture = new Voiture();
     }
 
     @Test
     void ajouterVoiture()
-    {
-        Voiture uneVoiture = mock(Voiture.class);
-        
-        statistiqueImpl.ajouter(uneVoiture);
+    {        
+        statistiqueImpl.ajouter(voiture);
         assertDoesNotThrow(() -> statistiqueImpl.prixMoyen());
     }
 
     @Test
     void prixMoyenCalcul()
     {
-        Voiture v1 = mock(Voiture.class);
-        Voiture v2 = mock(Voiture.class);
+        Voiture v2 = new Voiture();
 
-        when(v1.getPrix()).thenReturn(1000);
-        when(v2.getPrix()).thenReturn(2000);
-        
-        statistiqueImpl.ajouter(v1);
+        voiture.setPrix(1000);
+        v2.setPrix(2000);
+
+        statistiqueImpl.ajouter(voiture);
         statistiqueImpl.ajouter(v2);
 
         Echantillon resultat = statistiqueImpl.prixMoyen();
